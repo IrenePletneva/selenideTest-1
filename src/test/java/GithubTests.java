@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class Tests {
+public class GithubTests {
     static {
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
@@ -41,10 +41,8 @@ public class Tests {
         $("#wiki-pages-filter").click();
         $("#wiki-pages-filter").setValue("SoftAssertion");
         $("a[href='/selenide/selenide/wiki/SoftAssertions']").shouldHave(text("SoftAssertion")).click();
-//        $(".markdown-body").$(byText("Soft assertions")).click();
         $(".markdown-body").$(byText("3. Using JUnit5 extend test class:"))
                 .sibling(0).shouldHave(text(codeJunit));
-//        sleep(5000);
     }
 
 
