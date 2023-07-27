@@ -27,6 +27,9 @@ public class Tests extends CodeJunit {
         $("#wiki-tab").click();
         $(".markdown-body").$(byText("Soft assertions"))
                 .shouldHave(attribute("href","https://github.com/selenide/selenide/wiki/SoftAssertions"));
+        $("#wiki-pages-filter").click();
+        $("#wiki-pages-filter").setValue("SoftAssertion");
+        $("a[href='/selenide/selenide/wiki/SoftAssertions']").shouldHave(text("SoftAssertion"));
         $(".markdown-body").$(byText("Soft assertions")).click();
 //        sleep(5000);
         $(".markdown-body").$(byText("3. Using JUnit5 extend test class:"))
