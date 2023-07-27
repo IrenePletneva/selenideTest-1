@@ -44,6 +44,4 @@ public class GithubTests {
         $(".markdown-body").$(byText("3. Using JUnit5 extend test class:"))
                 .sibling(0).shouldHave(text(codeJunit));
     }
-
-
 }
