@@ -20,10 +20,11 @@ public class OpenHoverTest {
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.baseUrl = "https://github.com&quot;
     }
     @Test
     void openGitHover(){
-        open("https://github.com/");
+        open("/");
         $(".header-menu-wrapper").$(byText("Solutions")).hover();
         $(byText("Enterprise")).click();
         $(".application-main h1").shouldHave(text("Build like the best"));
