@@ -27,7 +27,7 @@ public class OpenHoverTest {
         $(".header-menu-wrapper").$(byText("Solutions")).hover();
         $(byText("Enterprise")).click();
         $(".application-main h1").shouldHave(text("Build like the best"));
-//        $(".h1-mktg mb-3 color-fg-default").shouldHave(Condition.text("Build like the best"));
+//       $(".h1-mktg mb-3 color-fg-default").shouldHave(Condition.text("Build like the best"));
 //            sleep(5000);
     }
 }

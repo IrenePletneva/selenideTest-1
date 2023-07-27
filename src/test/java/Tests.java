@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class Tests extends CodeJunit {
+public class Tests {
     static {
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
@@ -23,6 +23,17 @@ public class Tests extends CodeJunit {
     }
     @Test
     void findSoftAssertionsSelenide (){
+        String  codeJunit ="@ExtendWith({SoftAssertsExtension.class})\n" +
+                "class Tests {\n" +
+                "  @Test\n" +
+                "  void test() {\n" +
+                "    Configuration.assertionMode = SOFT;\n" +
+                "    open(\"page.html\");\n" +
+                "\n" +
+                "    $(\"#first\").should(visible).click();\n" +
+                "    $(\"#second\").should(visible).click();\n" +
+                "  }\n" +
+                "}";
         open("https://github.com/selenide/selenide");
         $("#wiki-tab").click();
         $(".markdown-body").$(byText("Soft assertions"))
